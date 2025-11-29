@@ -2,8 +2,9 @@
 
 import re
 from pathlib import Path
-from functools import lru_cache
 from dataclasses import dataclass
+
+from lieutenant.memory import memoize
 
 CMUDICT_PATH = Path(__file__).parent / 'resources' / 'cmudict' / 'cmudict.dict'
 
@@ -36,7 +37,7 @@ def parse_cmudict_entry(line: str) -> Pronunciation:
     raise ValueError
 
 
-@lru_cache
+@memoize
 def load_cmudict() -> Dictionary:
     '''Load and return the CMU Pronouncing Dictionary.'''
     dictionary = {}
