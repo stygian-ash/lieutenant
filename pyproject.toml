@@ -1,0 +1,24 @@
+[project]
+name = "lieutenant"
+version = "0.1.0"
+description = "Encode numbers using the mnemonic major system"
+readme = "README.md"
+authors = [
+    { name = "Emily Prieto", email = "61399347+stygian-ash@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.scripts]
+lieutenant = "lieutenant:main"
+
+[project.urls]
+Homepage = "https://github.com/stygian-ash/lieutenant"
+Repository = "https://github.com/stygian-ash/lieutenant.git"
+Issues = "https://github.com/stygian-ash/lieutenant/issues"
+
+[build-system]
+requires = ["uv_build>=0.9.12,<0.10.0"]
+build-backend = "uv_build"
