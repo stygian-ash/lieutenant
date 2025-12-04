@@ -48,8 +48,9 @@ def generate_partitions(input: str, automaton: DFA) -> Iterator[tuple[str, ...]]
     for first, rest in list(accepted_prefixes(input, automaton))[::-1]:
         if first == '':
             continue
-        for partition in generate_partitions(rest, automaton):
-            yield (first,) + partition
+        else:
+            for partition in generate_partitions(rest, automaton):
+                yield (first,) + partition
 
 
 def encode_partition(partition: tuple[str, ...], table: EncodingTable) -> Iterator[tuple[str, ...]]:
